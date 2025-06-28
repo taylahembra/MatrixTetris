@@ -1569,6 +1569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e29d6d7c64e1e24596a7c9b05a33469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  events: {fileID: 0}
   Nodes:
   - {fileID: 1234807075154148217}
   - {fileID: 2928504144236663899}

@@ -73,10 +73,15 @@ public class UI : MonoBehaviour
         Debug.Log("Reflect");
         blockManager.curBlock.GetComponent<Block>().Reflect("x");
     }
-    
+
     public void ReflectY()
     {
         Debug.Log("Reflect");
         blockManager.curBlock.GetComponent<Block>().Reflect("y");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

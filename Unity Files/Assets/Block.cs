@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [HideInInspector] public Events events;
     public Matrix3x3 matrix;
     public List<GameObject> Nodes;
+    [HideInInspector] public bool placed = false;
 
     void Start()
     {
-        // for (int i = 0; i < Nodes.Count; i++)
-        // {
-        //     Nodes[i].SetActive(false);
-        // }
-        //SetNodes(new Matrix3x3(2, 0, 0, 1, 2, 3, 0, 0, 2));
+        // Get Managers
+        events = GameObject.FindGameObjectWithTag("Manager").GetComponent<Events>();
     }
 
     public GameObject this[int row, int col, int layer]
@@ -24,11 +23,12 @@ public class Block : MonoBehaviour
 
     void Update()
     {
-        //     if (Input.GetKeyDown(KeyCode.Tab))
-        //     {
-        //         matrix.Add(new Matrix3x3(2, 0, 0, 0, 2, 0, 0, 0, 2));
-        //         SetNodes(matrix);
-        //     }
+        // Check if fallen. If so, game over
+        if (gameObject.transform.position.y < -5 && placed)
+        {
+            events.OnDeathTriggered();
+            //events.OnDeath.Invoke();
+        }
     }
 
     public void SetNodes(Matrix3x3 newmatrix)
@@ -119,7 +119,7 @@ public class Block : MonoBehaviour
     {
         matrix.Reflect(axis);
         SetNodes(matrix);
-        
+
     }
 
     public void SetColor()

@@ -53,6 +53,7 @@ public class BlockCreation : MonoBehaviour
         // Make cur block affected by gravity and enable colliders
         curBlock.GetComponent<Rigidbody>().useGravity = true;
         curBlock.GetComponent<Block>().EnableCollider();
+        curBlock.GetComponent<Block>().placed = true;
 
         // Get new cur block. Disable colliders and make not affected by gravity
         curBlock = Instantiate(blockPrefab, cameraManager.touch, Quaternion.identity);

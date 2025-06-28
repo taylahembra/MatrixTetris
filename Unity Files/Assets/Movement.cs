@@ -23,7 +23,7 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         // Allow enter to switch between UI and movement
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (allowMove)
             {

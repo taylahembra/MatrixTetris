@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Camera.cs" />
+    <Compile Include="Assets/Events.cs" />
     <Compile Include="Assets/Block Creation.cs" />
     <Compile Include="Assets/Block.cs" />
     <Compile Include="Assets/PlayerMovement.cs" />
