@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Block creation
+// Handles block generation
+
 public class BlockCreation : MonoBehaviour
 {
     public CameraMovement cameraManager;
@@ -32,12 +35,16 @@ public class BlockCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Get player input
         PlayerInput();
+
+        // Update score UI
         UIController.UpdateScore();
     }
 
     void FixedUpdate()
     {
+        // Move block to camera position
         if (curBlock != null) curBlock.transform.position = cameraManager.touch;
     }
 
@@ -75,7 +82,7 @@ public class BlockCreation : MonoBehaviour
 
     public void NewNext()
     {
-        Debug.Log("New next");
+        // Create new block for the next block display
         nextBlock = GenerateShape();
         nextBlock3D.SetMatrix(nextBlock);
     }

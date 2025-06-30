@@ -4,6 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Events
+// Handles events, currently just death
+
 public class Events : MonoBehaviour
 {
     public UnityEvent OnDeath;

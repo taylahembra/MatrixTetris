@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+// UI
+// Controls the UI for the main ui camera, not the death ui camera
 
 public class UI : MonoBehaviour
 {
@@ -21,7 +23,6 @@ public class UI : MonoBehaviour
 
     public void Transpose()
     {
-        Debug.Log("Transpose");
         blockManager.curBlock.GetComponent<Block>().Transpose();
     }
 
@@ -32,27 +33,23 @@ public class UI : MonoBehaviour
 
     public void ScalarMultiply()
     {
-        Debug.Log("Scalar");
         blockManager.curBlock.GetComponent<Block>().ScalarMultiply((int)scalarSlider.value);
     }
 
     public void Multiply()
     {
-        Debug.Log("Multiply");
         blockManager.curBlock.GetComponent<Block>().Multiply(blockManager.nextBlock);
         blockManager.NewNext();
     }
 
     public void Add()
     {
-        Debug.Log("Add");
         blockManager.curBlock.GetComponent<Block>().Add(blockManager.nextBlock);
         blockManager.NewNext();
     }
 
     public void Transform()
     {
-        Debug.Log("Transform");
         Matrix3x3 transformMatrix = new Matrix3x3(float.Parse(matrix[0].text), float.Parse(matrix[1].text), float.Parse(matrix[2].text), float.Parse(matrix[3].text),
         float.Parse(matrix[4].text), float.Parse(matrix[5].text), float.Parse(matrix[6].text), float.Parse(matrix[7].text), float.Parse(matrix[8].text));
         Debug.Log(transformMatrix.ToString());
@@ -61,24 +58,20 @@ public class UI : MonoBehaviour
 
     public void RotateLeft()
     {
-        Debug.Log("Rotate");
         blockManager.curBlock.GetComponent<Block>().Rotate(1);
     }
     public void RotateRight()
     {
-        Debug.Log("Rotate");
         blockManager.curBlock.GetComponent<Block>().Rotate(-1);
     }
 
     public void ReflectX()
     {
-        Debug.Log("Reflect");
         blockManager.curBlock.GetComponent<Block>().Reflect("x");
     }
 
     public void ReflectY()
     {
-        Debug.Log("Reflect");
         blockManager.curBlock.GetComponent<Block>().Reflect("y");
     }
 

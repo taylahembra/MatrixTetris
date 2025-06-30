@@ -13,9 +13,11 @@ public class CameraMovement : MonoBehaviour
 
     public Transform orientation;
     float xRotation, yRotation;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Set curser
         allowMove = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -41,6 +43,7 @@ public class CameraMovement : MonoBehaviour
             }
         }
 
+        // This controls the user controls when they are enabled
         if (allowMove)
         {
             // Get where the pointer is

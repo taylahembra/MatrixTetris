@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
+// Matrix
+// Contains matrix elements, and functions for matrix operations
+
 public class Matrix3x3
 {
     List<float> numbers;
@@ -75,6 +78,7 @@ public class Matrix3x3
 
     public void Reflect(string axis)
     {
+        // Reflect across and axis
         if (axis == "x")
         {
             List<float> temp = new List<float>();
@@ -83,7 +87,7 @@ public class Matrix3x3
             temp.Add(this[8]); temp.Add(this[7]); temp.Add(this[6]);
             numbers = temp;
         }
-        
+
 
         else if (axis == "y")
         {
@@ -98,6 +102,7 @@ public class Matrix3x3
 
     public void Rotate(int dir)
     {
+        // Rotate, 1 for clockwise, -1 for anticlockwise
         if (dir == 1)
         {
             List<float> temp = new List<float>();

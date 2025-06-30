@@ -62,6 +62,7 @@ public class Block : MonoBehaviour
 
     public void DisableCollider()
     {
+        // Disable the colliders for all cubes
         for (int i = 0; i < 3; i++)
         {
             for (int ii = 0; ii < 3; ii++)
@@ -73,6 +74,7 @@ public class Block : MonoBehaviour
 
     public void EnableCollider()
     {
+        // Enable the colliders for all cubes
         for (int i = 0; i < 3; i++)
         {
             for (int ii = 0; ii < 3; ii++)
