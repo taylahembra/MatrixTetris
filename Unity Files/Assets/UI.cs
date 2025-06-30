@@ -16,6 +16,8 @@ public class UI : MonoBehaviour
     public TMP_Text scalarText;
     public BlockCreation blockManager;
     public List<TMP_InputField> matrix = new List<TMP_InputField>();
+    public TMP_Text scoreText;
+    public int score = 0;
 
     public void Transpose()
     {
@@ -83,5 +85,15 @@ public class UI : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void UpdateScore()
+    {
+        scoreText.text = $"Score: {score}";
+    }
+
+    public void IncreaseScore()
+    {
+        score++;
     }
 }

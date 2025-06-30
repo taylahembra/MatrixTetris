@@ -8,6 +8,7 @@ TagManager:
   - Manager
   - UI
   - UIDeath
+  - UIController
   layers:
   - Default
   - TransparentFX

@@ -9,10 +9,14 @@ public class BlockCreation : MonoBehaviour
     [HideInInspector] public GameObject curBlock = null;
     [HideInInspector] public Matrix3x3 nextBlock = null;
     public NextBlockController nextBlock3D;
+    UI UIController;
 
 
     void Start()
     {
+        // Get UI object to update score
+        UIController = GameObject.FindGameObjectWithTag("UIController").GetComponent<UI>();
+
         // First block. Disable colliders and make not affected by gravity
         curBlock = Instantiate(blockPrefab, cameraManager.touch, Quaternion.identity);
         curBlock.GetComponent<Block>().SetNodes(GenerateShape());
@@ -29,6 +33,7 @@ public class BlockCreation : MonoBehaviour
     void Update()
     {
         PlayerInput();
+        UIController.UpdateScore();
     }
 
     void FixedUpdate()
@@ -54,6 +59,7 @@ public class BlockCreation : MonoBehaviour
         curBlock.GetComponent<Rigidbody>().useGravity = true;
         curBlock.GetComponent<Block>().EnableCollider();
         curBlock.GetComponent<Block>().placed = true;
+        UIController.IncreaseScore();
 
         // Get new cur block. Disable colliders and make not affected by gravity
         curBlock = Instantiate(blockPrefab, cameraManager.touch, Quaternion.identity);
